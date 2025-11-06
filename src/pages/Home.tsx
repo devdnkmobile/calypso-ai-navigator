@@ -42,38 +42,37 @@ const Home = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-secondary to-background -z-10" />
+      <section className="relative pt-20 pb-8 md:pt-24 md:pb-12 overflow-hidden">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-fade-in">
-              <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                  Интеллектуальные{" "}
-                  <span className="text-gradient">ИИ-сотрудники</span> для вашего бизнеса
-                </h1>
-                <p className="text-lg text-muted-foreground max-w-xl">
-                  Создаём решения на основе нейронных сетей и LLM, которые автоматизируют бизнес-процессы и приносят реальные результаты
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="calypso" size="xl" asChild>
-                  <Link to="/contacts">
-                    Обсудить проект
-                    <ArrowRight className="ml-2" size={20} />
-                  </Link>
-                </Button>
-                <Button variant="outline" size="xl" asChild>
-                  <Link to="/products">Наши решения</Link>
-                </Button>
-              </div>
-            </div>
-            <div className="relative animate-fade-in">
+          <div className="relative bg-gradient-to-br from-primary to-primary/90 rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl">
+            <div className="absolute inset-0 opacity-30">
               <img
                 src={heroImage}
-                alt="AI Network Visualization"
-                className="rounded-2xl shadow-2xl hover-lift"
+                alt="AI Network Background"
+                className="w-full h-full object-cover"
               />
+            </div>
+            <div className="relative px-6 md:px-12 lg:px-16 py-16 md:py-24 lg:py-32 text-center">
+              <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
+                <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight text-white">
+                  Интеллектуальные{" "}
+                  <span className="text-accent">ИИ-сотрудники</span> для вашего бизнеса
+                </h1>
+                <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
+                  Создаём решения на основе нейронных сетей и LLM, которые автоматизируют бизнес-процессы и приносят реальные результаты
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                  <Button variant="calypso" size="xl" asChild className="bg-accent hover:bg-accent/90">
+                    <Link to="/contacts">
+                      Обсудить проект
+                      <ArrowRight className="ml-2" size={20} />
+                    </Link>
+                  </Button>
+                  <Button variant="outline" size="xl" asChild className="bg-white/10 text-white border-white/30 hover:bg-white/20 backdrop-blur-sm">
+                    <Link to="/products">Наши решения</Link>
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -127,21 +126,32 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-secondary">
+      <section className="section-padding">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center space-y-8">
-            <h2 className="text-3xl md:text-4xl font-bold">
-              Готовы автоматизировать ваш бизнес?
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Свяжитесь с нами для обсуждения вашего проекта и получите персональное предложение
-            </p>
-            <Button variant="calypso" size="xl" asChild>
-              <Link to="/contacts">
-                Связаться с нами
-                <ArrowRight className="ml-2" size={20} />
-              </Link>
-            </Button>
+          <div className="relative bg-gradient-to-br from-primary to-primary/90 rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl">
+            <div className="absolute inset-0 opacity-20">
+              <img
+                src={heroImage}
+                alt="AI Background"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative px-6 md:px-12 lg:px-16 py-16 md:py-20 text-center">
+              <div className="max-w-3xl mx-auto space-y-8">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+                  Готовы автоматизировать ваш бизнес?
+                </h2>
+                <p className="text-lg md:text-xl text-white/90">
+                  Свяжитесь с нами для обсуждения вашего проекта и получите персональное предложение
+                </p>
+                <Button variant="calypso" size="xl" asChild className="bg-accent hover:bg-accent/90">
+                  <Link to="/contacts">
+                    Связаться с нами
+                    <ArrowRight className="ml-2" size={20} />
+                  </Link>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

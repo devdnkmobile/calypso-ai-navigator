@@ -19,11 +19,11 @@ const Header = () => {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
+    <header className="fixed top-0 w-full bg-black/95 backdrop-blur-md z-50 border-b border-white/10">
       <nav className="container-custom">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold">Calypso</span>
+            <span className="text-2xl font-bold text-white">Calypso</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -34,13 +34,13 @@ const Header = () => {
                 to={item.href}
                 className={`text-sm font-medium transition-colors relative ${
                   isActive(item.href)
-                    ? "text-accent"
-                    : "text-foreground hover:text-accent"
+                    ? "text-white"
+                    : "text-white/70 hover:text-white"
                 }`}
               >
                 {item.name}
                 {isActive(item.href) && (
-                  <span className="absolute -bottom-[21px] left-0 right-0 h-0.5 bg-accent" />
+                  <span className="absolute -bottom-[21px] left-0 right-0 h-0.5 bg-white" />
                 )}
               </Link>
             ))}
@@ -54,7 +54,7 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden"
+            className="md:hidden text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -63,13 +63,13 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 space-y-4 border-t border-border">
+          <div className="md:hidden py-4 space-y-4 border-t border-white/10">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
                 className={`block py-2 text-sm font-medium ${
-                  isActive(item.href) ? "text-accent" : "text-foreground"
+                  isActive(item.href) ? "text-white" : "text-white/70"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
