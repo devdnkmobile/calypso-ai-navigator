@@ -48,12 +48,15 @@ const About = () => {
             </p>
           </div>
           
-          <div className="mb-16">
-            <img
-              src={aboutImage}
-              alt="Calypso Office"
-              className="rounded-2xl shadow-2xl w-full max-w-5xl mx-auto"
-            />
+          <div className="relative bg-black rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl">
+            <div className="absolute inset-0 opacity-50">
+              <img
+                src={aboutImage}
+                alt="Calypso Office"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative px-6 md:px-12 lg:px-16 py-16 md:py-20 lg:py-24"></div>
           </div>
         </div>
       </section>
