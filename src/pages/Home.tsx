@@ -44,7 +44,7 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative pt-20 pb-8 md:pt-24 md:pb-12 overflow-hidden">
         <div className="container-custom">
-          <div className="relative bg-black rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl max-w-5xl mx-auto">
+          <div className="relative bg-black rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl">
             <div className="absolute inset-0 opacity-50">
               <img
                 src={heroImage}
