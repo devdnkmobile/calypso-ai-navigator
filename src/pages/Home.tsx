@@ -44,7 +44,7 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative pt-20 pb-8 md:pt-24 md:pb-12 overflow-hidden">
         <div className="container-custom">
-          <div className="relative bg-black rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl">
+          <div className="relative bg-black rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl max-w-5xl mx-auto">
             <div className="absolute inset-0 opacity-50">
               <img
                 src={heroImage}
@@ -52,27 +52,29 @@ const Home = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="relative px-6 md:px-12 lg:px-16 py-20 md:py-28 lg:py-36 text-center">
-              <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
-                <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight text-white tracking-tight">
+            <div className="relative px-6 md:px-12 lg:px-16 py-16 md:py-20 lg:py-24 text-center">
+              <div className="max-w-3xl mx-auto space-y-6 animate-fade-in">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white tracking-tight">
                   Интеллектуальные ИИ-сотрудники для вашего бизнеса
                 </h1>
-                <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto font-light">
+                <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto font-light">
                   Создаём решения на основе нейронных сетей и LLM, которые автоматизируют бизнес-процессы и приносят реальные результаты
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-                  <Button variant="default" size="xl" asChild className="bg-white text-black hover:bg-white/90 font-medium">
-                    <Link to="/contacts">
-                      Обсудить проект
-                      <ArrowRight className="ml-2" size={20} />
-                    </Link>
-                  </Button>
-                  <Button variant="outline" size="xl" asChild className="bg-transparent text-white border-white/40 hover:bg-white/10 backdrop-blur-sm font-medium">
-                    <Link to="/products">Наши решения</Link>
-                  </Button>
-                </div>
               </div>
             </div>
+          </div>
+          
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8 max-w-md mx-auto">
+            <Button variant="default" size="lg" asChild className="bg-black text-white hover:bg-black/90 font-medium">
+              <Link to="/contacts">
+                Обсудить проект
+                <ArrowRight className="ml-2" size={18} />
+              </Link>
+            </Button>
+            <Button variant="outline" size="lg" asChild className="border-border hover:bg-secondary font-medium">
+              <Link to="/products">Наши решения</Link>
+            </Button>
           </div>
         </div>
       </section>
