@@ -1,53 +1,50 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { TrendingUp, TrendingDown, CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { TrendingUp, Clock, CheckCircle, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Cases = () => {
   const cases = [
     {
-      city: "Сыктывкар",
-      industry: "Торговля",
-      challenge: "Недостаточное количество лидов, проблемы с обслуживанием клиентов",
+      title: "Речевая аналитика на 600+ торговых точках",
+      industry: "Ритейл",
       results: [
-        { metric: "Автоматизация процессов продаж", positive: true },
-        { metric: "Рост продаж на 15% по всей сети АЗС", positive: true },
-        { metric: "В некоторых точках рост до 50%", positive: true },
-        { metric: "Улучшение качества обслуживания", positive: true },
+        { metric: "Время обработки сократилось на 90%", icon: Clock },
+        { metric: "Повышение качества обслуживания на 27%", icon: TrendingUp },
+        { metric: "Внедрение LLM для анализа диалогов в реальном времени", icon: CheckCircle },
       ],
+      description: "Автоматизация контроля качества обслуживания на сети АЗС с использованием ASR и LLM моделей.",
     },
     {
-      city: "Екатеринбург",
-      industry: "Логистика",
-      challenge: "Высокие операционные издержки, неэффективное управление ресурсами",
+      title: "AI-ассистент врача",
+      industry: "Медицина",
       results: [
-        { metric: "Снижение рисков мошенничества до 30%", positive: true },
-        { metric: "Оптимизация маршрутов доставки", positive: true },
-        { metric: "Сокращение времени обработки заказов", positive: true },
+        { metric: "Время на обработку консультации сокращено на 40%", icon: Clock },
+        { metric: "Снижение ошибок заполнения документации на 65%", icon: TrendingUp },
+        { metric: "Автоматические рекомендации по протоколам", icon: CheckCircle },
       ],
+      description: "Персональный AI-ассистент для врачей, работающий в режиме реального времени.",
     },
     {
-      city: "Оренбург",
-      industry: "Производство",
-      challenge: "Отсутствие прозрачности в работе с внешними вендорами",
+      title: "Автоматизация бизнес-процессов",
+      industry: "Корпоративный сектор",
       results: [
-        { metric: "Внедрение системы контроля поставщиков", positive: true },
-        { metric: "Автоматизация документооборота", positive: true },
-        { metric: "Снижение операционных рисков", positive: true },
+        { metric: "130+ процессов автоматизировано", icon: CheckCircle },
+        { metric: "Экономия 14 000 часов рабочего времени в квартал", icon: Clock },
+        { metric: "Единый AI-контур для всех сервисов", icon: TrendingUp },
       ],
+      description: "Комплексная автоматизация через N8N и MCP-сервер для крупной компании.",
     },
-    {
-      city: "Омск",
-      industry: "Государственный сектор",
-      challenge: "Необходимость интеграции внутренних систем",
-      results: [
-        { metric: "Интеграция всех ключевых систем (CRM, ERP)", positive: true },
-        { metric: "Размещение в закрытом контуре", positive: true },
-        { metric: "Передача данных без сторонних сервисов", positive: true },
-        { metric: "Повышение прозрачности данных", positive: true },
-      ],
-    },
+  ];
+
+  const stats = [
+    { value: "600+", label: "Торговых точек" },
+    { value: "90%", label: "Сокращение времени" },
+    { value: "130+", label: "Автоматизированных процессов" },
+    { value: "14 000", label: "Часов экономии в квартал" },
   ];
 
   return (
@@ -58,9 +55,9 @@ const Cases = () => {
       <section className="pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h1 className="text-4xl md:text-5xl font-bold">Кейсы внедрения</h1>
+            <h1 className="text-4xl md:text-5xl font-bold">Кейсы</h1>
             <p className="text-xl text-muted-foreground">
-              Реальные результаты внедрения наших решений в различных отраслях
+              Реальные результаты внедрений. Показываем, как наши решения работают в бизнесе.
             </p>
           </div>
         </div>
@@ -69,31 +66,15 @@ const Cases = () => {
       {/* Stats Overview */}
       <section className="pb-16">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
-            <Card className="border-border bg-secondary">
-              <CardContent className="pt-6 text-center">
-                <div className="text-4xl font-bold text-accent mb-2">50+</div>
-                <div className="text-sm text-muted-foreground">Реализованных проектов</div>
-              </CardContent>
-            </Card>
-            <Card className="border-border bg-secondary">
-              <CardContent className="pt-6 text-center">
-                <div className="text-4xl font-bold text-accent mb-2">30%</div>
-                <div className="text-sm text-muted-foreground">Снижение рисков</div>
-              </CardContent>
-            </Card>
-            <Card className="border-border bg-secondary">
-              <CardContent className="pt-6 text-center">
-                <div className="text-4xl font-bold text-accent mb-2">15%+</div>
-                <div className="text-sm text-muted-foreground">Рост продаж</div>
-              </CardContent>
-            </Card>
-            <Card className="border-border bg-secondary">
-              <CardContent className="pt-6 text-center">
-                <div className="text-4xl font-bold text-accent mb-2">24/7</div>
-                <div className="text-sm text-muted-foreground">Работа систем</div>
-              </CardContent>
-            </Card>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+            {stats.map((stat, index) => (
+              <Card key={index} className="border-border bg-secondary">
+                <CardContent className="pt-6 text-center">
+                  <div className="text-4xl font-bold text-accent mb-2">{stat.value}</div>
+                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -107,26 +88,19 @@ const Cases = () => {
                 <CardHeader>
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <CardTitle className="text-2xl mb-2">{caseItem.city}</CardTitle>
+                      <CardTitle className="text-2xl mb-2">{caseItem.title}</CardTitle>
                       <Badge variant="secondary">{caseItem.industry}</Badge>
                     </div>
                   </div>
-                  <div className="space-y-2">
-                    <h4 className="font-semibold text-muted-foreground">Задача:</h4>
-                    <p className="text-foreground">{caseItem.challenge}</p>
-                  </div>
+                  <p className="text-muted-foreground">{caseItem.description}</p>
                 </CardHeader>
                 <CardContent>
                   <h4 className="font-semibold mb-4">Результаты:</h4>
                   <div className="space-y-3">
                     {caseItem.results.map((result, rIndex) => (
                       <div key={rIndex} className="flex items-start gap-3">
-                        {result.positive ? (
-                          <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                        ) : (
-                          <TrendingDown className="h-5 w-5 text-destructive mt-0.5 flex-shrink-0" />
-                        )}
-                        <span className="text-muted-foreground">{result.metric}</span>
+                        <result.icon className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                        <span className="text-foreground">{result.metric}</span>
                       </div>
                     ))}
                   </div>
@@ -137,51 +111,22 @@ const Cases = () => {
         </div>
       </section>
 
-      {/* Methodology Section */}
+      {/* CTA Section */}
       <section className="py-16 bg-secondary">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <h2 className="text-3xl font-bold text-center">
-              Как мы работаем
+          <div className="max-w-3xl mx-auto text-center space-y-8">
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Хотите таких же результатов?
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                {
-                  step: "01",
-                  title: "Анализ бизнес-процессов",
-                  description: "Глубокое изучение специфики вашего бизнеса и выявление точек роста",
-                },
-                {
-                  step: "02",
-                  title: "Разработка решения",
-                  description: "Создание индивидуального решения на базе наших продуктов",
-                },
-                {
-                  step: "03",
-                  title: "Внедрение",
-                  description: "Интеграция в закрытый контур с минимальным влиянием на процессы",
-                },
-                {
-                  step: "04",
-                  title: "Поддержка",
-                  description: "Постоянный мониторинг, оптимизация и техническая поддержка",
-                },
-              ].map((item, index) => (
-                <Card key={index} className="border-border bg-background">
-                  <CardContent className="pt-6">
-                    <div className="flex items-start gap-4">
-                      <div className="text-4xl font-bold text-accent/30">
-                        {item.step}
-                      </div>
-                      <div className="space-y-2">
-                        <h3 className="text-xl font-semibold">{item.title}</h3>
-                        <p className="text-muted-foreground">{item.description}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <p className="text-lg text-muted-foreground">
+              Оставьте заявку — мы подготовим архитектуру и расчёт для вашей компании
+            </p>
+            <Button variant="calypso" size="lg" asChild>
+              <Link to="/contacts">
+                Оставить заявку
+                <ArrowRight className="ml-2" size={20} />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

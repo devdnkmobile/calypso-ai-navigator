@@ -1,67 +1,68 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Code, Database, Cloud, Shield, Gauge, Layers } from "lucide-react";
+import { Shield, Server, Database, Search, Folder, Workflow } from "lucide-react";
 import techImage from "@/assets/technologies-stack.jpg";
+import workflowImage from "@/assets/workflow-02.png";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Technologies = () => {
   const techStack = [
     {
-      category: "LLM и ИИ-модели",
-      items: ["GPT", "Claude", "Mistral", "Llama"],
+      category: "LLM модели",
+      items: ["OpenAI", "Llama", "Gemini", "DeepSeek", "Qwen", "Локальные модели"],
     },
     {
-      category: "Обработка данных",
-      items: ["ASR (Speech Recognition)", "NLP (Natural Language Processing)", "CV (Computer Vision)", "Vector DB"],
+      category: "LVM модели",
+      items: ["Детекция объектов", "Классификация", "OCR", "Video-аналитика"],
     },
     {
       category: "Оркестрация",
-      items: ["n8n", "LangChain", "LlamaIndex", "MCP (Model Context Protocol)"],
+      items: ["N8N как ядро оркестрации", "MCP сервер как единая AI-шина"],
     },
     {
-      category: "Инфраструктура",
-      items: ["Python", "FastAPI", "Kubernetes", "Docker"],
+      category: "Поиск и аналитика",
+      items: ["Opensearch для поиска", "Визуализация аналитики"],
     },
     {
-      category: "Хранение и поиск",
-      items: ["OpenSearch", "Vector DB", "PostgreSQL", "Redis"],
+      category: "Управление данными",
+      items: ["Directus для управления данными"],
     },
     {
-      category: "Аналитика",
-      items: ["Grafana", "Superset", "Prometheus", "ELK Stack"],
+      category: "Хранение",
+      items: ["MinIO — хранение и потоковая обработка"],
     },
   ];
 
   const advantages = [
     {
       icon: Shield,
-      title: "Работа в закрытом контуре",
-      description: "Все данные остаются на серверах клиента, обеспечивая максимальную безопасность",
+      title: "Закрытый периметр",
+      description: "Разрабатываем решения, которые работают внутри закрытых периметров клиентов",
     },
     {
-      icon: Layers,
-      title: "Гибкая интеграция",
-      description: "Легкая интеграция с существующими корпоративными системами (CRM, ERP и др.)",
+      icon: Server,
+      title: "MCP-сервер",
+      description: "Единая точка доступа для всех AI-ассистентов с контролем промптов и контекста",
     },
     {
-      icon: Gauge,
-      title: "Модульная архитектура",
-      description: "Возможность подключения только необходимых компонентов и масштабирования",
+      icon: Workflow,
+      title: "N8N оркестрация",
+      description: "Гибкое управление моделями и построение сложных бизнес-процессов",
     },
     {
       icon: Database,
-      title: "Единая экосистема",
-      description: "Централизованное управление данными и аналитикой на единой платформе",
+      title: "Безопасность данных",
+      description: "Изоляция данных и подключение любых моделей — OpenAI, Llama, локальных",
     },
     {
-      icon: Cloud,
-      title: "Масштабируемость",
-      description: "Kubernetes-оркестрация позволяет легко масштабировать решения",
+      icon: Search,
+      title: "Opensearch",
+      description: "Мощный поиск и визуализация аналитики в реальном времени",
     },
     {
-      icon: Code,
-      title: "Открытые технологии",
-      description: "Используем проверенные open-source решения с активным сообществом",
+      icon: Folder,
+      title: "MinIO хранилище",
+      description: "Высокопроизводительное хранение и потоковая обработка данных",
     },
   ];
 
@@ -75,7 +76,7 @@ const Technologies = () => {
           <div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
             <h1 className="text-4xl md:text-5xl font-bold">Технологии</h1>
             <p className="text-xl text-muted-foreground">
-              Современный технологический стек для создания интеллектуальных ИИ-решений
+              Современные модели и инструменты, оптимизированные под корпоративные контуры
             </p>
           </div>
           
@@ -100,9 +101,8 @@ const Technologies = () => {
               Наш технологический стек
             </h2>
             <p className="text-lg text-muted-foreground text-center mb-12">
-              Компания Calypso применяет современный технологический стек для создания 
-              интеллектуальных ИИ-сотрудников, интегрируемых в корпоративные процессы. 
-              Архитектура ориентирована на безопасность, масштабируемость и работу в закрытом контуре.
+              Мы используем современные модели и инструменты, оптимизированные под корпоративные контуры. 
+              Разрабатываем решения, которые работают внутри закрытых периметров клиентов.
             </p>
           </div>
         </div>
@@ -133,19 +133,42 @@ const Technologies = () => {
         </div>
       </section>
 
-      {/* Advantages Section */}
+      {/* Workflow Illustration */}
       <section className="py-16 bg-secondary">
         <div className="container-custom">
+          <div className="text-center mb-12 space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Архитектура AI-процесса
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Пример оркестрации AI-агентов через N8N
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="rounded-[2rem] overflow-hidden shadow-2xl bg-white">
+              <img
+                src={workflowImage}
+                alt="AI Workflow Architecture"
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Advantages Section */}
+      <section className="section-padding">
+        <div className="container-custom">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            Преимущества архитектуры
+            Преимущества нашей архитектуры
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {advantages.map((advantage, index) => (
-              <Card key={index} className="hover-lift border-border bg-background">
+              <Card key={index} className="hover-lift border-border">
                 <CardContent className="pt-6">
                   <div className="space-y-4">
-                    <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
-                      <advantage.icon className="h-6 w-6 text-accent" />
+                    <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center">
+                      <advantage.icon className="h-6 w-6 text-foreground" />
                     </div>
                     <h3 className="text-xl font-semibold">{advantage.title}</h3>
                     <p className="text-muted-foreground">{advantage.description}</p>
@@ -153,38 +176,6 @@ const Technologies = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Security Section */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-accent/5 border border-accent/20 rounded-2xl p-8 md:p-12 space-y-6">
-              <div className="flex items-center gap-3 mb-6">
-                <Shield className="h-8 w-8 text-accent" />
-                <h2 className="text-3xl font-bold">Безопасность данных</h2>
-              </div>
-              <p className="text-lg text-muted-foreground">
-                Все решения Calypso работают в закрытом контуре клиента, что обеспечивает 
-                высокий уровень кибербезопасности. Данные не передаются третьим лицам и 
-                полностью контролируются вашей компанией.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
-                {[
-                  "Размещение в закрытом контуре",
-                  "Отсутствие передачи данных третьим лицам",
-                  "Соответствие стандартам безопасности",
-                  "Полный контроль над инфраструктурой",
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-accent" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>

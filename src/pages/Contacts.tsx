@@ -12,18 +12,18 @@ const Contacts = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     company: "",
-    message: "",
+    contact: "",
+    automation: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Сообщение отправлено",
-      description: "Мы свяжемся с вами в ближайшее время",
+      title: "Заявка отправлена",
+      description: "Мы свяжемся с вами в ближайшее время для подготовки архитектуры и расчёта",
     });
-    setFormData({ name: "", email: "", company: "", message: "" });
+    setFormData({ name: "", company: "", contact: "", automation: "" });
   };
 
   const contactInfo = [
@@ -54,9 +54,9 @@ const Contacts = () => {
       <section className="pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h1 className="text-4xl md:text-5xl font-bold">Свяжитесь с нами</h1>
+            <h1 className="text-4xl md:text-5xl font-bold">Хотите внедрить ИИ в вашу компанию?</h1>
             <p className="text-xl text-muted-foreground">
-              Готовы обсудить ваш проект? Заполните форму или свяжитесь с нами удобным способом
+              Оставьте заявку — мы подготовим архитектуру и расчет для оптимизации ваших процессов
             </p>
           </div>
         </div>
@@ -69,8 +69,8 @@ const Contacts = () => {
             {contactInfo.map((info, index) => (
               <Card key={index} className="border-border hover-lift">
                 <CardContent className="pt-6 text-center">
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                    <info.icon className="h-6 w-6 text-accent" />
+                  <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mx-auto mb-4">
+                    <info.icon className="h-6 w-6 text-foreground" />
                   </div>
                   <h3 className="font-semibold mb-2">{info.title}</h3>
                   {info.link ? (
@@ -96,6 +96,7 @@ const Contacts = () => {
           <div className="max-w-2xl mx-auto">
             <Card className="border-border">
               <CardContent className="pt-6">
+                <h2 className="text-2xl font-bold mb-6 text-center">Форма заявки</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">
@@ -113,27 +114,12 @@ const Contacts = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium">
-                      Email *
-                    </label>
-                    <Input
-                      id="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) =>
-                        setFormData({ ...formData, email: e.target.value })
-                      }
-                      placeholder="email@example.com"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
                     <label htmlFor="company" className="text-sm font-medium">
-                      Компания
+                      Компания *
                     </label>
                     <Input
                       id="company"
+                      required
                       value={formData.company}
                       onChange={(e) =>
                         setFormData({ ...formData, company: e.target.value })
@@ -143,41 +129,43 @@ const Contacts = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">
-                      Сообщение *
+                    <label htmlFor="contact" className="text-sm font-medium">
+                      Телефон / Email *
+                    </label>
+                    <Input
+                      id="contact"
+                      required
+                      value={formData.contact}
+                      onChange={(e) =>
+                        setFormData({ ...formData, contact: e.target.value })
+                      }
+                      placeholder="+7 (999) 123-45-67 или email@example.com"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="automation" className="text-sm font-medium">
+                      Что хотите автоматизировать *
                     </label>
                     <Textarea
-                      id="message"
+                      id="automation"
                       required
-                      value={formData.message}
+                      value={formData.automation}
                       onChange={(e) =>
-                        setFormData({ ...formData, message: e.target.value })
+                        setFormData({ ...formData, automation: e.target.value })
                       }
-                      placeholder="Расскажите о вашем проекте"
+                      placeholder="Опишите процессы, которые хотите автоматизировать с помощью ИИ"
                       rows={6}
                     />
                   </div>
 
                   <Button type="submit" variant="calypso" size="lg" className="w-full">
-                    Отправить сообщение
+                    Отправить заявку
                     <Send className="ml-2 h-4 w-4" />
                   </Button>
                 </form>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Additional Info */}
-      <section className="py-16 bg-secondary">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl font-bold">Готовы начать?</h2>
-            <p className="text-lg text-muted-foreground">
-              Мы всегда открыты для новых проектов и партнёрств. Свяжитесь с нами, 
-              чтобы обсудить, как наши решения могут помочь вашему бизнесу.
-            </p>
           </div>
         </div>
       </section>
