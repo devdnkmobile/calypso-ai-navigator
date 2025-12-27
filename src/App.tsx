@@ -9,6 +9,11 @@ import Products from "./pages/Products";
 import Technologies from "./pages/Technologies";
 import Cases from "./pages/Cases";
 import Contacts from "./pages/Contacts";
+import Workflow from "./pages/Workflow";
+import Speech from "./pages/services/Speech";
+import Assistants from "./pages/services/Assistants";
+import N8N from "./pages/services/N8N";
+import MCP from "./pages/services/MCP";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +31,11 @@ const App = () => (
           <Route path="/technologies" element={<Technologies />} />
           <Route path="/cases" element={<Cases />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/workflow" element={<Workflow />} />
+          <Route path="/services/speech" element={<Speech />} />
+          <Route path="/services/assistants" element={<Assistants />} />
+          <Route path="/services/n8n" element={<N8N />} />
+          <Route path="/services/mcp" element={<MCP />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
